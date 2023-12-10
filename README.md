@@ -3,6 +3,7 @@ This is a repository of programs for the Pushbot demonstration robot.
 
 This is a FIRST Tech Challenge robot used for demonstrations of hardware and programming. The robot using Tetrix parts. 
 - two old AndyMark NeveRest Classic 40 gearmotors mounted on the rear wheels;
+- motor encoder cables connecting each motor to the control hub (also includes Rev Logic Level Converters);
 - 4" tetrix wheels on the rear;
 - 4" omni-wheels on the front;
 - a Rev Control Hub and battery;
