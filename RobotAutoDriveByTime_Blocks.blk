@@ -1,0 +1,655 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="$)J!qGT?PTq$ZTVUGI+L">runtime</variable>
+<variable id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</variable>
+<variable id=".2K]L5YyqMo.yoUA!E3A">TURN_SPEED</variable>
+</variables>
+<block type="procedures_defnoreturn" id="OpN8!1beqW{8Bw6M/?m+" deletable="false" x="-286" y="129">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this OpMode is selected from the Driver Station.</comment>
+<data>{"commentPositionLeft":-68,"commentPositionTop":-70}</data>
+<statement name="STACK">
+<block type="comment" id="at5W]WcGN7IE_wSyl[2G">
+<field name="COMMENT">This OpMode illustrates the concept of driving a path based on time.</field>
+<next>
+<block type="comment" id="=i4nk~hA-W[2i7Cv(ZB0">
+<field name="COMMENT">This is a Blocks version of the Java sample program RobotAutoDriveByTime_Linear.</field>
+<next>
+<block type="comment" id="mrgYYwLKB|h*)I)sz7H~">
+<field name="COMMENT">The code assumes that you do NOT have encoders on the wheels,</field>
+<next>
+<block type="comment" id="`h[{uB8+MU_;M*gOSVH3">
+<field name="COMMENT">   otherwise you would use: RobotAutoDriveByEncoder;</field>
+<next>
+<block type="comment" id="NfbbdoH]QH9X!]m5!xgU">
+<field name="COMMENT">The desired path in this example is:</field>
+<next>
+<block type="comment" id="CkxLh*%:3}Sq8G3U52x:">
+<field name="COMMENT"> - Drive forward for 3 seconds</field>
+<next>
+<block type="comment" id="Lva0RR`crSD~C{Y[bOyk">
+<field name="COMMENT"> - Spin right for 1.3 seconds</field>
+<next>
+<block type="comment" id="eInTxv8{pAeE,]lO)-EG">
+<field name="COMMENT"> - Drive Backward for 1 Second</field>
+<next>
+<block type="comment" id="R?CO`.C,SO5875oVqYY;">
+<field name="COMMENT">The code is written in a simple form with no optimizations.</field>
+<next>
+<block type="comment" id="2E)2A*`b^PiWrgwVLCzD">
+<field name="COMMENT">However, there are several ways that this type of sequence could be streamlined</field>
+<next>
+<block type="comment" id="jM-B8x5pz8^akBk,,+:M">
+<field name="COMMENT">Initialize various variables</field>
+<next>
+<block type="variables_set" id="_=%i1LV/+q1#$Wm:r%?K">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+<value name="VALUE">
+<block type="elapsedTime2_create" id="Cm4OG57Dqkfj1vo0QhNw"/>
+</value>
+<next>
+<block type="variables_set" id="AZ,T#!Z^8*@g0hXo8xq^">
+<field name="VAR" id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</field>
+<value name="VALUE">
+<block type="math_number" id="Oy2p9!EWe^3P`MI,TrVE">
+<field name="NUM">0.6</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="dJ*6oK!OCL(,!iyZqeUy">
+<field name="VAR" id=".2K]L5YyqMo.yoUA!E3A">TURN_SPEED</field>
+<value name="VALUE">
+<block type="math_number" id="oI7n+NipUavdq^=:7%#F">
+<field name="NUM">0.6</field>
+</block>
+</value>
+<next>
+<block type="comment" id="cl`AHmO[VC`pVLOE/tqc">
+<field name="COMMENT">Reverse one of the drive motors.</field>
+<next>
+<block type="comment" id="~!ePt=cs-j/_!f.E?MqU">
+<field name="COMMENT">To drive forward, most robots need the motor on one side to be reversed, because the axles point in opposite directions.</field>
+<next>
+<block type="comment" id="a3V4/3/oMvRule*Mwcx6">
+<field name="COMMENT">When run, this OpMode should start both motors driving forward. So adjust these two lines based on your first test drive.</field>
+<next>
+<block type="comment" id="`T%(ba,ZeiHI##EjmUTN">
+<field name="COMMENT">Note: The settings here assume direct drive on left and right wheels.  Gear Reduction or 90 Deg drives may require direction flips</field>
+<next>
+<block type="dcMotor_setProperty_Direction" id="eq?6z=8[X(p{)!kj=ljm">
+<field name="IDENTIFIER">left_driveAsDcMotor</field>
+<field name="PROP">Direction</field>
+<comment pinned="false" h="103" w="377">You will have to determine which motor to reverse for your robot.  In this example, the left motor was reversed so that positive applied power makes it move the robot in the forward direction.</comment>
+<data>{"IDENTIFIER":"left_drive","commentPositionLeft":-94,"commentPositionTop":-128}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="fA5KX5L@6hypglpOh=^Z">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="comment" id="9HKT#@f}0`[573*:]2Y6">
+<field name="COMMENT">Send telemetry message to signify robot waiting;</field>
+<next>
+<block type="telemetry_addTextData_All" id="V9xli-,;Ufp;ozR!GPj~">
+<value name="KEY">
+<shadow type="text" id="bKD4{qc/l2onN:[c:ksv">
+<field name="TEXT">Status</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="ea%!d|U~.lqIsWt%7vtS">
+<field name="TEXT">Ready to run</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_update" id="1}|3xdh2[`%u7-]:;+]I">
+<next>
+<block type="comment" id="vh)RKBclcotIc(J*[oX4">
+<field name="COMMENT">Wait for the game to start (driver presses PLAY)</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":K8^U;yjvZn8aWa~t|#1">
+<next>
+<block type="controls_if" id="0#o7qH*u*qfz$Bq_V/`k">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id="[bChm|`3)2ph$xioy@{("/>
+</value>
+<statement name="DO0">
+<block type="comment" id=":*~E^;jympAIAK*1RqqM">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="comment" id="HPVXI84W2_aIJwo%n3BY">
+<field name="COMMENT">Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way</field>
+<next>
+<block type="comment" id="ckuu69}Y8:[#0iDz@./d">
+<field name="COMMENT">Step 1:  Drive forward for 3 seconds</field>
+<next>
+<block type="dcMotor_setDualProperty" id="^5#Dxbj}#GiSry/uWGk~">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">left_driveAsDcMotor</field>
+<field name="IDENTIFIER2">right_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"left_drive","IDENTIFIER2":"right_drive"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="gG|?e6hxQ][UANU5~:$b">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="26(Lb(t3.vMO2uyt_Lq|">
+<field name="VAR" id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="DJZ;B5=cKK++}n5{%*Q}">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="[:n1cxT`?TrPf17@CBkE">
+<field name="VAR" id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</field>
+</block>
+</value>
+<next>
+<block type="elapsedTime2_reset" id="5fe,,St:(ymau32cZC[S">
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="AV39VccRn5rUz:U19Q)o">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id=";?u-rJ#FN3IEUo%rzP0!">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_operation" id="J7YfZA(8JQ}Ntg6R^-gb">
+<field name="OP">AND</field>
+<value name="A">
+<block type="linearOpMode_opModeIsActive" id="-(|WoGbw`fofYl;9=5+0"/>
+</value>
+<value name="B">
+<block type="logic_compare" id="aT,z:!z}:[ESeVn;%xTW">
+<field name="OP">LT</field>
+<value name="A">
+<block type="elapsedTime2_getProperty_Number" id="oJ]!M}foZgVI?Jwu2NY`">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="5qzK`v.ji,V]]O+06lvu">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="T!Sr20N++Y^qwbn_@]NF">
+<field name="NUM">3</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="comment" id="j%/]x0!:SV!7p5sYtU9W">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_addTextData_All" id="1,y|}t{$/x*tp%AwoZVz">
+<value name="KEY">
+<shadow type="text" id="+[(9l|i%=gT{$8[at+3!">
+<field name="TEXT">Path</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="R_6*,spBR|X3/:o5+IwW">
+<field name="TEXT">Ready to run</field>
+</shadow>
+<block type="text_join" id="G{*P!.To6SqWMGh5a/Fn">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="text" id="k[gIv;)[@_8,A$G{-S7=">
+<field name="TEXT">Leg 1: </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="misc_formatNumber_withWidth" id="^=h;8Q$6/KTn{`)cwDuG">
+<value name="NUMBER">
+<shadow type="math_number" id="`{Osf?cL{pf1EJ1GzG4O">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="elapsedTime2_getProperty_Number" id="6d-@3_,pl_qJ?]53wXqn">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="Gpm[W=a9X]8XI~c4z)E^">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="V-O8..Vi~aV$g~~b34?e">
+<field name="NUM">4</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="hAqZMBT`glKAuB2}I/fg">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="text" id="bjC77bmi!G^Qs)``q5Gj">
+<field name="TEXT"> S Elapsed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="Il/_Kv^vY42Foa}=N4Ix"/>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="z+UekqN|j9.~9qSF;eW/">
+<field name="COMMENT">Step 2:  Spin right for 1.3 seconds</field>
+<next>
+<block type="dcMotor_setDualProperty" id="XSdW:]qu7hQ5wBGlFPPX">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">left_driveAsDcMotor</field>
+<field name="IDENTIFIER2">right_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"left_drive","IDENTIFIER2":"right_drive"}</data>
+<value name="VALUE1">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="4!@dni~~?ycq6zvdkN1@">
+<field name="VAR" id=".2K]L5YyqMo.yoUA!E3A">TURN_SPEED</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="K=aN,8S!`5L|7yYJ:YzR">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="sy+.UO5?p$L$9RL/Q-D]">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="k0vx9)^auW]Q9}R/Q!`2">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="IAoA`{wu}rjHqs8%tyb.">
+<field name="VAR" id=".2K]L5YyqMo.yoUA!E3A">TURN_SPEED</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="elapsedTime2_reset" id="Xd05pTLo^.B$!7ffgXyj">
+<value name="ELAPSED_TIME">
+<block type="variables_get" id=":]7|*|B3vqbMb6|,0#JQ">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id="5=4!O;r)j$m77uh`^mde">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_operation" id="FAW]Y;4{TmDF}a2jk81w">
+<field name="OP">AND</field>
+<value name="A">
+<block type="linearOpMode_opModeIsActive" id="4||05~v6:H!pb*Ga|%jK"/>
+</value>
+<value name="B">
+<block type="logic_compare" id="Q_a!O/dx.GmX=k`_OqI$">
+<field name="OP">LT</field>
+<value name="A">
+<block type="elapsedTime2_getProperty_Number" id="{M(,p.}z_La7:#%yWCQ*">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="k+o2P:aV#,@)_lZ$0l7V">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id=",-6u=efkvZlU[I#,z(mK">
+<field name="NUM">1.3</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="comment" id="/AGr1yuJPA[t_;=Yr),0">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_addTextData_All" id="%@aSIonac!^eJ:*oL/2^">
+<value name="KEY">
+<shadow type="text" id=".n}Nct.LNmYN]Gpl2W7E">
+<field name="TEXT">Path</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT">Ready to run</field>
+</shadow>
+<block type="text_join" id="q7/R}$,9@7z$#;(`0lYH">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="text" id="aOV%V=r3SAWvm6`#eBPJ">
+<field name="TEXT">Leg 2: </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="misc_formatNumber_withWidth" id="{2.EiNFETGA$ers%:w#F">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="elapsedTime2_getProperty_Number" id="=Y}}UAn`%OzX.]V*YSP:">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="Q0ifkjEaG.{c]0Zo7eF_">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="sf!UO;yXeuGy:|^HYk4$">
+<field name="NUM">4</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="!C,0O6~.?By},Kvz1N3?">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="text" id="C9ir5yjQ@;VRXLa:p3V~">
+<field name="TEXT"> S Elapsed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="={KkC00wuI:1bB4!3q**"/>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="nE;,91~/aM^Z)/XHU46w">
+<field name="COMMENT">Step 3:  Drive Backward for 1 Second</field>
+<next>
+<block type="dcMotor_setDualProperty" id=")Ah`tvi.:`A?Tb}D5$(`">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">left_driveAsDcMotor</field>
+<field name="IDENTIFIER2">right_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"left_drive","IDENTIFIER2":"right_drive"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="XG-9A*gt,P]`p]16N[){">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="CHO|vq=VE_L~4L-3qRi(">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="911wI:5@N!pcoCbrKqgX">
+<field name="VAR" id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="t9f^J8VtG/V9kW7LDgyT">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="xW~`imEuh8(358;B:mVp">
+<field name="VAR" id="%Iy0g`HC{nFHFcZWThiN">FORWARD_SPEED</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="elapsedTime2_reset" id="#Etkm?C#PeVx0`03Q*o3">
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="Oy+V0i186w2N~F;UWcu}">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id="q$Db%/_l/RAD7I2d}N-a">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_operation" id="cbu,6UGr9sl|uER^#6[P">
+<field name="OP">AND</field>
+<value name="A">
+<block type="linearOpMode_opModeIsActive" id="]x@1a{`kUYw?G1y,Ld4{"/>
+</value>
+<value name="B">
+<block type="logic_compare" id="M=%n}AHj2SCQ%CJ~5|!3">
+<field name="OP">LT</field>
+<value name="A">
+<block type="elapsedTime2_getProperty_Number" id="7n5R1JI6hehTq#)amdF0">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id="cg=qXT^#:e4GwGZnw_!q">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="jU`+ebnH4VmI$RSQaR68">
+<field name="NUM">1</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="comment" id="[{CvdgL4=~q@np+1V(0b">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_addTextData_All" id="upVHty==FW65YKiTGNHQ">
+<value name="KEY">
+<shadow type="text" id="a4(MwyxFP!{G#),,GhH)">
+<field name="TEXT">Path</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT">Ready to run</field>
+</shadow>
+<block type="text_join" id="_Dq2VFHEg0{J,zZ9le,D">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="text" id="M5dH5dm3!XVG^MxF#AM.">
+<field name="TEXT">Leg 3: </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="misc_formatNumber_withWidth" id=",_HeGRN!i]Dwm[;uOGd=">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="elapsedTime2_getProperty_Number" id="7[d}BRT`aTx9#qyg!kzy">
+<field name="PROP">Seconds</field>
+<value name="ELAPSED_TIME">
+<block type="variables_get" id=".7X.iUcat/6-yK@[?Lwt">
+<field name="VAR" id="$)J!qGT?PTq$ZTVUGI+L">runtime</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="eM[6Ky1qsMoE-*1HADu4">
+<field name="NUM">4</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="=:sXxf?B4$wR[Jo;FMXF">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="text" id="0Gp_rUjZY)kf?U;%]{J`">
+<field name="TEXT"> S Elapsed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="Dwgj2DZAo-7ov[8vN!6u"/>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="#pjsEq{^35R}K^7[LqLI">
+<field name="COMMENT">Step 4:  Stop</field>
+<next>
+<block type="dcMotor_setDualProperty" id="*p=7^EwxOzp$R1yrs#i2">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">left_driveAsDcMotor</field>
+<field name="IDENTIFIER2">right_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"left_drive","IDENTIFIER2":"right_drive"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="8$uv;.aPC~OTYTq%vz^i">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="Pjb^jZUet(T#aI?7{VGe">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="C}AjU+!o=s$DCc~PBbfU">
+<value name="KEY">
+<shadow type="text" id="Z$Cz)oK:HAqsbbI)G-V=">
+<field name="TEXT">Path</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="10P+zK7lyP5lF$mSwjyc">
+<field name="TEXT">Complete</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_update" id="ep9W#1#iGtSu{lY8V3I{">
+<next>
+<block type="linearOpMode_sleep_Number" id="Bt*o=`{FPLRa)#]s2ZZ7">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="BEhitH}K%Z$th`(swt7S">
+<field name="NUM">1000</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
