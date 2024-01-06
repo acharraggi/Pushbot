@@ -1,5 +1,5 @@
 # Pushbot
-This is a repository of Blocks programs for the Pushbot demonstration robot. Many of these programs are copies of Java sample programs from the SDK.
+This is a repository of Blocks programs for the Pushbot demonstration robot. Many of these programs are copies of Java sample programs from the SDK converted into Blocks.
 
 This is a FIRST Tech Challenge robot used for demonstrations of hardware and programming. The robot using Tetrix parts. 
 - two old AndyMark NeveRest Classic 40 gearmotors mounted on the rear wheels;
@@ -7,7 +7,8 @@ This is a FIRST Tech Challenge robot used for demonstrations of hardware and pro
 - 4" tetrix wheels on the rear;
 - 4" omni-wheels on the front;
 - a Rev Control Hub and battery;
-- a Logitech C270 webcam.
+- a Logitech C270 webcam;
+- a Rev Color Sensor V3.
 
 For the CENTERSTAGE game a "plow" was added to the front that let's the robot push pixels onto the spike marks.
 
@@ -24,8 +25,8 @@ For the CENTERSTAGE game a "plow" was added to the front that let's the robot pu
 
 - [RobotAutoDriveByGyro_Demo](Images/RobotAutoDriveByGyro_Demo.png) - this is a copy of the RobotAutoDriveByGyro_Linear.java program that uses the same driving functions to move the robot around the Centerstage field. See the robot using the [RobotAutoDriveByGyro_Demo program on YouTube.](https://youtu.be/-TFp3KY9alM).
 
-- [RobotAutoDriveByTime_Blocks](Images/RobotAutoDriveByTime_Blocks.png) - this is a copy of the [RobotAutoDriveByTime_Linear.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveByTime_Linear.java) sample program. See the robot using the [RobotAutoDriveByTime_Blocks program on YouTube.](https://youtu.be/mrhTzFVS_Is).
+- [RobotAutoDriveByTime_Blocks](Images/RobotAutoDriveByTime_Blocks.png) - this is a copy of the [RobotAutoDriveByTime_Linear.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveByTime_Linear.java) sample program. This OpMode illustrates the concept of driving a path based on time. See the robot using the [RobotAutoDriveByTime_Blocks program on YouTube.](https://youtu.be/mrhTzFVS_Is). See also the tutorial webpage on the [RobotAutoDriveByTime_Blocks sample program](https://firstroboticsbc.org/ftc/ftc-team-resources/RobotAutoDriveByTime_Blocks/).
 
 - [RobotAutoDriveToAprilTagTank_Blocks](Images/RobotAutoDriveToAprilTagTank_Blocks.png) - this is a Blocks copy of the [RobotAutoDriveToAprilTagTank.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveToAprilTagTank.java) sample program. It makes use of motor encoders and the Rev Control Hub IMU for more accurate driving and turning. See the robot driving using the [RobotAutoDriveToAprilTagTank_Blocks program on YouTube](https://youtu.be/Z32eKDitKmo). See also the tutorial webpage on the [RobotAutoDriveToAprilTagTank_Blocks sample program](https://firstroboticsbc.org/ftc/ftc-team-resources/RobotAutoDriveToAprilTagTank_Blocks/).
 
-- [RobotAutoDriveToLine_Blocks](Images/RobotAutoDriveToLine_Blocks.png) - this is a copy of the [RobotAutoDriveByTime_Linear.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveToLine_Linear.java) sample program. See the robot using the [RobotAutoDriveToLine_Blocks program on YouTube.](https://youtu.be/-MpNI2-azjw).
+- [RobotAutoDriveToLine_Blocks](Images/RobotAutoDriveToLine_Blocks.png) - this is a copy of the [RobotAutoDriveToLine_Blocks.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveToLine_Linear.java) sample program. This OpMode illustrates the concept of driving up to a line and then stopping. See the robot using the [RobotAutoDriveToLine_Blocks program on YouTube.](https://youtu.be/-MpNI2-azjw). See also the tutorial webpage on the [RobotAutoDriveToLine_Blocks sample program](https://firstroboticsbc.org/ftc/ftc-team-resources/RobotAutoDriveToLine_Blocks/).
