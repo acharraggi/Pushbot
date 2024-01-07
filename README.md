@@ -18,6 +18,7 @@ For the CENTERSTAGE game a "plow" was added to the front that let's the robot pu
 
  The following programs are on the Pushbot. Click on the program names below to see the downloaded PNG image of the program.
 
+- [TFOD-prop-April-Tag](Images/TFOD-prop-April-Tag.png) - This is a CENTERSTAGE autonomous program that uses TensorFlow to detect a Team Prop from the starting position, places the purple pixel, and then lines up on the correct backdrop area using April Tags. See the robot using the [TFOD-prop-April-Tag program on YouTube.](https://youtu.be/ko0mzQYXO2E). See also the tutorial webpage on the [TFOD-prop-April-Tags autonomous program](https://firstroboticsbc.org/ftc/ftc-team-resources/TFOD-prop-April-Tag/).
 
 - [SensorIMUOrthogonal_Blocks](Images/SensorIMUOrthogonal_Blocks.png) - this is a Blocks copy of the [SensorIMUOrthogonal.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorIMUOrthogonal.java) sample program. The program makes use of the Rev Control Hub IMU and shows orientation and and angular velocities on the driver station.  See also the tutorial webpage on the [SensorIMUOrthogonal_Blocks program](https://firstroboticsbc.org/ftc/ftc-team-resources/SensorIMUOrthogonal_Blocks/).
 
