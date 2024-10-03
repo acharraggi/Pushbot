@@ -25,7 +25,7 @@ Programs for the INTO THE DEEP season
 
 - [DeepAuto2](Images/DeepAuto2.png) - This is a simple program to place a sample in the net zone and park in the observation zone. It contains basic code for moving using motor encoders and turning using the control hub IMU. See the tutorial webpage at [DeepAuto2](https://firstroboticsbc.org/ftc/ftc-team-resources/intothedeep-my-second-autonomous-program/).
 
-- [DeepAutoAscend3](Images/DeepAutoAscend3.png) - This is a complex program that pushes three samples into the net zone and does a level one acent. It uses the functions from the RobotAutoDrivesByGyro program to drive and turn. See the tutorial webpage at [DeepAuto2](https://firstroboticsbc.org/ftc/ftc-team-resources/DeepAutoAscend3/).
+- [DeepAutoAscend3](Images/DeepAutoAscend3.png) - This is a complex program that pushes three samples into the net zone and does a level one acent. It uses the functions from the RobotAutoDrivesByGyro program to drive and turn. See the tutorial webpage at [DeepAutoAscend3](https://firstroboticsbc.org/ftc/ftc-team-resources/DeepAutoAscend3/).
 
  The following Robot Auto Drive programs are included as sample Blocks programs as of the INTO THE DEEP season. You can create them directly on your robot without having to download them here.
 
