@@ -1,22 +1,33 @@
 # Pushbot
 This is a repository of Blocks programs for the Pushbot demonstration robot. Many of these programs are copies of Java sample programs from the SDK converted into Blocks.
 
-This is a FIRST Tech Challenge robot used for demonstrations of hardware and programming. The robot using Tetrix parts. 
+This is a *FIRST* Tech Challenge robot used for demonstrations of hardware and programming. The robot using Tetrix parts. 
 - two old AndyMark NeveRest Classic 40 gearmotors mounted on the rear wheels;
 - motor encoder cables connecting each motor to the control hub (including Rev Logic Level Converters);
 - 4" tetrix wheels on the rear;
 - 4" omni-wheels on the front;
 - a Rev Control Hub and battery;
-- a Logitech C270 webcam;
+- a Logitech C920 webcam, that replaced the C270 webcam;
 - a Rev Color Sensor V3.
 
 For the CENTERSTAGE game a "plow" was added to the front that let's the robot push pixels onto the spike marks.
+For the INTO THE DEEP game the plow was modified to hold a sample that could be pushed into the net zone.
 
-![Model](https://raw.githubusercontent.com/acharraggi/Pushbot/main/Images/PXL_20231203_191218559.jpg)
+![Model](https://raw.githubusercontent.com/acharraggi/Pushbot/main/Images/pushbot.png)
 
  The **.blk** files listed above are the Blocks programs that you can run on your robot if the configuration file is the same. This robot has two motors **left_drive** and **right_drive** and a webcam called **webcam 1**. The motors on this robot are configured as AndyMark NeveRest Classic 40 Gearmotors, your config file should have the motors set to whatever motors you are using for your robot. 
 
  The following programs are on the Pushbot. Click on the program names below to see the downloaded PNG image of the program.
+
+Programs for the INTO THE DEEP season
+
+- [DeepAuto1](Images/DeepAuto1.png) - This is a simple program to drive forward for 1 second and stop. It can be used to push samples into the net zone or park in the observation zone. It's based on the RobotAutoDriveByTime sample. See the tutorial webpage at [DeepAuto1](https://firstroboticsbc.org/ftc/ftc-team-resources/intothedeep-my-first-autonomous-program/).
+
+- [DeepAuto2](Images/DeepAuto2.png) - This is a simple program to place a sample in the net zone and park in the observation zone. It contains basic code for moving using motor encoders and turning using the control hub IMU. See the tutorial webpage at [DeepAuto2](https://firstroboticsbc.org/ftc/ftc-team-resources/intothedeep-my-second-autonomous-program/).
+
+- [DeepAutoAscend3](Images/DeepAutoAscend3.png) - This is a complex program that pushes three samples into the net zone and does a level one acent. It uses the functions from the RobotAutoDrivesByGyro program to drive and turn. See the tutorial webpage at [DeepAuto2](https://firstroboticsbc.org/ftc/ftc-team-resources/DeepAutoAscend3/).
+
+ The following Robot Auto Drive programs are included as sample Blocks programs as of the INTO THE DEEP season. You can create them directly on your robot without having to download them here.
 
 - [RobotAutoDriveByGyro_Blocks](Images/RobotAutoDriveByGyro_Blocks.png) - this is a Blocks copy of the [RobotAutoDriveByGyro_Linear.java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/blob/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/RobotAutoDriveByGyro_Linear.java) sample program. It makes use of motor encoders and the Rev Control Hub IMU for more accurate driving and turning. See the robot driving using the [RobotAutoDriveByGyro_Blocks program on YouTube](https://youtu.be/8sitKrHBNyY). See also the tutorial webpage on the [RobotAutoDriveByGyro_Blocks program](https://firstroboticsbc.org/ftc/ftc-team-resources/RobotAutoDriveByGyro_Blocks/).
 
